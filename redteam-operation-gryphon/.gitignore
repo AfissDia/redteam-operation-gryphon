@@ -1,0 +1,37 @@
+# VM / ISO / grosses archives
+*.vdi
+*.vmdk
+*.vhd
+*.ova
+*.ovf
+*.iso
+*.vbox
+*.vbox-prev
+*.zip
+*.7z
+
+# Secrets / identifiants / dumps
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+*.kirbi
+*password*
+*credentials*
+*.dmp
+*.hiv
+
+# Exports bruts et preuves sensibles
+reconnaissance/raw/
+preuves/raw/
+*.pcap
+*.pcapng
+
+# État local
+*.tmp
+*.bak
+__pycache__/
+.DS_Store
+Thumbs.db
