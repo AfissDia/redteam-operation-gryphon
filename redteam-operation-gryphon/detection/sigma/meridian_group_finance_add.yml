@@ -1,0 +1,23 @@
+﻿title: Meridian Bank - Ajout au groupe Finance
+id: e0c3b9ab-3e6f-4c49-8ef9-54f11ca7e99a
+status: experimental
+description: Detecte l'ajout d'un membre au groupe GG_Finance.
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4728
+    TargetUserName: 'GG_Finance'
+  condition: selection
+fields:
+  - SubjectUserName
+  - MemberName
+  - TargetUserName
+falsepositives:
+  - Modification autorisee par un administrateur
+level: medium
+tags:
+  - attack.persistence
+  - attack.t1098.007
+

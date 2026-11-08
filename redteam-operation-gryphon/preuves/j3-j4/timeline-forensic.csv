@@ -1,0 +1,3 @@
+﻿"Date","EventID","Auteur","Compte","Groupe","Action"
+"06/11/2026 02:20:13","4728","Administrateur","CN=Afiss DIA,OU=IT,DC=meridian,DC=test","GG_Finance","Ajout au groupe"
+"06/11/2026 02:21:30","4729","Administrateur","CN=Afiss DIA,OU=IT,DC=meridian,DC=test","GG_Finance","Retrait du groupe"

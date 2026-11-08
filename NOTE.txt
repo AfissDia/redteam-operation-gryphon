@@ -1,0 +1,109 @@
+PS C:\Windows\system32> Get-MpThreatDetection |
+>> Select-Object InitialDetectionTime, ThreatID, ThreatStatusID, Resources |
+>> Format-List
+
+
+InitialDetectionTime : 06/11/2026 14:17:38
+ThreatID             : 2147827561
+ThreatStatusID       : 4
+Resources            : {file:_C:\Users\DELL\Downloads\Non confirmé 652417.crdownload,
+                       webfile:_C:\Users\DELL\Downloads\Non confirmé 652417.crdownload|https://release-assets.githubuse
+                       rcontent.com/github-production-release-asset/385323486/5184d031-1ac6-4eb2-8668-c2d12592376f?sp=r
+                       &sv=2018-11-09&sr=b&spr=https&se=2026-11-06T14%3A17%3A21Z&rscd=attachment%3B+filename%3DSharpHou
+                       nd_v2.17.1_windows_x86.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947a
+                       a7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-06T13%3A16%3A27Z&ske=2026-11-06T14%
+                       3A17%3A21Z&sks=b&skv=2018-11-09&sig=C2RizXcw5MIjAGy1TK9sTGxgU%2FDn%2FdileS6sHfTLbrY%3D&jwt=eyJ0e
+                       XAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVi
+                       dXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5Mzk3MTM1NiwibmJmIjoxNzkzOTcxMDU2LCJwYXRoIjoi
+                       cmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.oPU4FSh8u_bHpJljkr1sF_LLIG-TaQZmZ
+                       vDKqzsJZn4&response-content-disposition=attachment%3B%20filename%3DSharpHound_v2.17.1_windows_x8
+                       6.zip&response-content-type=application%2Foctet-stream|pid:13276,ProcessStart:134384446579257047
+                       }
+
+InitialDetectionTime : 06/11/2026 14:04:10
+ThreatID             : 2147963166
+ThreatStatusID       : 4
+Resources            : {file:_C:\Users\DELL\Downloads\Non confirmé 507131.crdownload,
+                       webfile:_C:\Users\DELL\Downloads\Non confirmé 507131.crdownload|https://release-assets.githubuse
+                       rcontent.com/github-production-release-asset/385323486/e37ad803-16dd-4445-89f0-0bfbda9b7e4f?sp=r
+                       &sv=2018-11-09&sr=b&spr=https&se=2026-11-06T14%3A02%3A00Z&rscd=attachment%3B+filename%3DSharpHou
+                       nd_v2.17.1%2Bdebug_windows_x86.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd
+                       -ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-06T13%3A01%3A03Z&ske=2026-1
+                       1-06T14%3A02%3A00Z&sks=b&skv=2018-11-09&sig=I8RhWux9GAsT%2FrQA4zjVpuYyGy3VQmFV95WA%2F4Ov2y0%3D&j
+                       wt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMu
+                       Z2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5Mzk3MDU0OCwibmJmIjoxNzkzOTcwMjQ4LCJw
+                       YXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.4-ACSqPID9wJPMtpv60OdLPw1
+                       IpDS1OujVkcvptLGic&response-content-disposition=attachment%3B%20filename%3DSharpHound_v2.17.1%2B
+                       debug_windows_x86.zip&response-content-type=application%2Foctet-stream|pid:11432,ProcessStart:13
+                       4384438497944901}
+
+InitialDetectionTime : 06/11/2026 13:51:46
+ThreatID             : 2147963166
+ThreatStatusID       : 4
+Resources            : {file:_C:\Users\DELL\Downloads\Non confirmé 677803.crdownload,
+                       webfile:_C:\Users\DELL\Downloads\Non confirmé 677803.crdownload|https://release-assets.githubuse
+                       rcontent.com/github-production-release-asset/385323486/e37ad803-16dd-4445-89f0-0bfbda9b7e4f?sp=r
+                       &sv=2018-11-09&sr=b&spr=https&se=2026-11-06T13%3A42%3A31Z&rscd=attachment%3B+filename%3DSharpHou
+                       nd_v2.17.1%2Bdebug_windows_x86.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd
+                       -ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-06T12%3A42%3A09Z&ske=2026-1
+                       1-06T13%3A42%3A31Z&sks=b&skv=2018-11-09&sig=kh76qem5o9HfHzpCJ0uaC2MJufDbwO4Ii3LqmIkFU5M%3D&jwt=e
+                       yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0
+                       aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5Mzk2OTgwMywibmJmIjoxNzkzOTY5NTAzLCJwYXRo
+                       IjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.4WScFH0gaCjLkQWj6pQfUxtSRzj67
+                       5AhZ6RQpf78FVo&response-content-disposition=attachment%3B%20filename%3DSharpHound_v2.17.1%2Bdebu
+                       g_windows_x86.zip&response-content-type=application%2Foctet-stream|pid:9528,ProcessStart:1343844
+                       31045730681}
+
+InitialDetectionTime : 06/11/2026 14:15:51
+ThreatID             : 2147827561
+ThreatStatusID       : 4
+Resources            : {file:_C:\Users\DELL\Downloads\Non confirmé 229365.crdownload,
+                       webfile:_C:\Users\DELL\Downloads\Non confirmé 229365.crdownload|https://release-assets.githubuse
+                       rcontent.com/github-production-release-asset/385323486/5184d031-1ac6-4eb2-8668-c2d12592376f?sp=r
+                       &sv=2018-11-09&sr=b&spr=https&se=2026-11-06T14%3A00%3A40Z&rscd=attachment%3B+filename%3DSharpHou
+                       nd_v2.17.1_windows_x86.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947a
+                       a7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-06T12%3A59%3A57Z&ske=2026-11-06T14%
+                       3A00%3A40Z&sks=b&skv=2018-11-09&sig=%2Fcvyv%2FiGuoF4WuoipvfVeEGKy3fAu5BNvrlhMFJZ6j0%3D&jwt=eyJ0e
+                       XAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVi
+                       dXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5Mzk3MTIzNSwibmJmIjoxNzkzOTcwOTM1LCJwYXRoIjoi
+                       cmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.uN23t6txFc_Jhq-GOQQKnE2NQUdWwtYBW
+                       ei1RRzQ4ME&response-content-disposition=attachment%3B%20filename%3DSharpHound_v2.17.1_windows_x8
+                       6.zip&response-content-type=application%2Foctet-stream|pid:5136,ProcessStart:134384445512933717}
+
+InitialDetectionTime : 06/11/2026 14:15:36
+ThreatID             : 2147827561
+ThreatStatusID       : 4
+Resources            : {file:_C:\Users\DELL\Downloads\Non confirmé 208684.crdownload,
+                       webfile:_C:\Users\DELL\Downloads\Non confirmé 208684.crdownload|https://release-assets.githubuse
+                       rcontent.com/github-production-release-asset/385323486/5184d031-1ac6-4eb2-8668-c2d12592376f?sp=r
+                       &sv=2018-11-09&sr=b&spr=https&se=2026-11-06T14%3A00%3A40Z&rscd=attachment%3B+filename%3DSharpHou
+                       nd_v2.17.1_windows_x86.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947a
+                       a7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-06T12%3A59%3A57Z&ske=2026-11-06T14%
+                       3A00%3A40Z&sks=b&skv=2018-11-09&sig=%2Fcvyv%2FiGuoF4WuoipvfVeEGKy3fAu5BNvrlhMFJZ6j0%3D&jwt=eyJ0e
+                       XAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVi
+                       dXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5Mzk3MTIzNSwibmJmIjoxNzkzOTcwOTM1LCJwYXRoIjoi
+                       cmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.uN23t6txFc_Jhq-GOQQKnE2NQUdWwtYBW
+                       ei1RRzQ4ME&response-content-disposition=attachment%3B%20filename%3DSharpHound_v2.17.1_windows_x8
+                       6.zip&response-content-type=application%2Foctet-stream|pid:12796,ProcessStart:134384445362711604
+                       }
+
+InitialDetectionTime : 06/11/2026 14:05:01
+ThreatID             : 2147963166
+ThreatStatusID       : 4
+Resources            : {file:_C:\Users\DELL\Downloads\Non confirmé 809450.crdownload,
+                       webfile:_C:\Users\DELL\Downloads\Non confirmé 809450.crdownload|https://release-assets.githubuse
+                       rcontent.com/github-production-release-asset/385323486/e37ad803-16dd-4445-89f0-0bfbda9b7e4f?sp=r
+                       &sv=2018-11-09&sr=b&spr=https&se=2026-11-06T14%3A05%3A43Z&rscd=attachment%3B+filename%3DSharpHou
+                       nd_v2.17.1%2Bdebug_windows_x86.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd
+                       -ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-06T13%3A04%3A57Z&ske=2026-1
+                       1-06T14%3A05%3A43Z&sks=b&skv=2018-11-09&sig=zY5SW8jwijXo8X53459iNjrCXGg5WnjRYQaNnKI9ri0%3D&jwt=e
+                       yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0
+                       aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5Mzk3MDU5OSwibmJmIjoxNzkzOTcwMjk5LCJwYXRo
+                       IjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.rlFWedd3P2MBE-xUCU720jye0U2Np
+                       VBgBQ3p5Xka1f4&response-content-disposition=attachment%3B%20filename%3DSharpHound_v2.17.1%2Bdebu
+                       g_windows_x86.zip&response-content-type=application%2Foctet-stream|pid:12060,ProcessStart:134384
+                       439007035397}
+
+
+
+PS C:\Windows\system32>
