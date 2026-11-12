@@ -1,23 +1,16 @@
-﻿title: Meridian Bank - Retrait du groupe Finance
-id: b6af57c2-6ee0-4a5e-aac8-70c9ef6d2004
+title: Meridian - Retrait d'un groupe global
+id: 17e60d23-a3f7-42b0-9350-33d922487702
 status: experimental
-description: Detecte le retrait d'un membre du groupe GG_Finance.
+description: Surveille le retrait d'un membre d'un groupe global du domaine fictif.
 logsource:
   product: windows
   service: security
 detection:
   selection:
     EventID: 4729
-    TargetUserName: 'GG_Finance'
   condition: selection
-fields:
-  - SubjectUserName
-  - MemberName
-  - TargetUserName
 falsepositives:
-  - Retrait autorise par un administrateur
+  - Administration autorisée des groupes
 level: low
 tags:
-  - attack.persistence
-  - attack.t1098.007
-
+  - attack.t1098

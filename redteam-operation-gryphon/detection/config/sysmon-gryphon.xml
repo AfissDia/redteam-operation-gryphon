@@ -1,0 +1,25 @@
+<Sysmon schemaversion="4.82">
+  <HashAlgorithms>sha256</HashAlgorithms>
+  <EventFiltering>
+    <RuleGroup name="Gryphon-Process" groupRelation="or">
+      <ProcessCreate onmatch="exclude" />
+    </RuleGroup>
+    <RuleGroup name="Gryphon-Network" groupRelation="or">
+      <NetworkConnect onmatch="include">
+        <Image condition="end with">\powershell.exe</Image>
+        <Image condition="end with">\pwsh.exe</Image>
+      </NetworkConnect>
+    </RuleGroup>
+    <RuleGroup name="Gryphon-Files" groupRelation="or">
+      <FileCreate onmatch="include">
+        <TargetFilename condition="begin with">C:\Gryphon\</TargetFilename>
+      </FileCreate>
+    </RuleGroup>
+    <RuleGroup name="Gryphon-DNS" groupRelation="or">
+      <DnsQuery onmatch="include">
+        <Image condition="end with">\powershell.exe</Image>
+        <Image condition="end with">\pwsh.exe</Image>
+      </DnsQuery>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>

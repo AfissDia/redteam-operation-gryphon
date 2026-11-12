@@ -1,26 +1,18 @@
-﻿title: Meridian Bank - Tentative de lecture du partage Finance
-id: 6e8b1c50-1e75-4ca7-996a-b48675caaf03
+title: Meridian - Accès de test au partage Finance
+id: ebc13ea1-4779-49db-805e-17298450be17
 status: experimental
-description: Detecte une tentative de lecture du partage Finance par le compte IT a.dia depuis le client de laboratoire.
+description: Recherche l'événement 5145 précis observé pendant le scénario Finance ; ne constitue pas une règle générique de refus.
 logsource:
   product: windows
   service: security
 detection:
   selection:
     EventID: 5145
-    ShareName: '\\*\Finance'
-    SubjectUserName: 'a.dia'
+    SubjectUserName: a.dia
     IpAddress: '192.168.60.20'
-    AccessMask: '0x81'
   condition: selection
-fields:
-  - SubjectUserName
-  - IpAddress
-  - ShareName
-  - AccessMask
 falsepositives:
-  - Test de securite autorise
-level: medium
+  - Test autorisé de contrôle d'accès
+level: low
 tags:
-  - attack.discovery
   - attack.t1135

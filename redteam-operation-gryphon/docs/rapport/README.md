@@ -1,3 +1,5 @@
-# Rapport final (J5)
+# Rapport
 
-Plan proposé : résumé exécutif, périmètre, architecture du lab, méthodologie, chronologie de la chaîne d'attaque, preuves, cartographie ATT&CK, analyse des artefacts, règles Sigma, limites et recommandations. Cible du sujet : 30 à 50 pages.
+Rapport Word : `Rapport_final_Operation_Gryphon.docx`.
+
+Le document différencie les observations réelles, simulations autorisées et limites. Les captures de démonstration ne remplacent pas des événements techniques.

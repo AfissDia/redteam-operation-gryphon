@@ -1,12 +1,7 @@
-# Détection — préparation J4
+# Détection et investigations
 
-Pour chaque technique réalisée dans le lab : identifier les événements produits, leur source, les champs exploitables et une logique de détection reproductible.
-
-## À documenter
-
-- Sources Windows (Security, System, PowerShell, éventuels journaux Sysmon si déployé).
-- Événements utiles à l'authentification et aux accès aux fichiers, après activation et vérification de la politique d'audit.
-- Règles Sigma : objectifs, logsource, conditions, faux positifs, validation contre les propres événements.
-- IOC de laboratoire exclusivement fictifs ; matrice ATT&CK annotée.
-
-Ne pas annoncer de règle « validée » tant qu'une exécution et des journaux correspondants ne le démontrent pas.
+- `config/sysmon-gryphon.xml` : configuration ciblée du DC.
+- `sigma/` : trois règles de laboratoire, validées syntaxiquement ; 5145 non retrouvé dans le dernier export.
+- `scripts/summarize_hayabusa.py` : résumé de chronologie CSV.
+- Le stockage des EVTX et CSV contenant les identités du domaine reste **hors Git**.
+- Voir [procédure](../docs/procedure/PROCEDURE.md) et [rapport](../docs/rapport/Rapport_final_Operation_Gryphon.docx).

@@ -1,58 +1,51 @@
-# Red Team — Opération Gryphon
+# Opération Gryphon - Active Directory, contrôle d'accès et investigation
 
-**Projet pédagogique — Mastère Cybersécurité, La Plateforme_**  
-**Client fictif :** Meridian Bank (1 200 collaborateurs)  
-**Statut :** laboratoire AD opérationnel ; tests SMB initiaux réalisés ; cartographie BloodHound à venir.
+**Projet 6 - Mastère Cybersécurité, La Plateforme_**  
+**Client fictif :** Meridian Bank - laboratoire local `meridian.test`  
+**État au 12 novembre 2026 :** expérimentation principale achevée, limites documentées, rapport et procédure mis à jour.
 
-## Objectif
+## Résumé du projet
 
-Monter un laboratoire Active Directory local, y simuler une intrusion autorisée, puis relier chaque action aux traces produites, aux techniques MITRE ATT&CK et aux mesures de détection. Les actions destructives et les cibles extérieures au laboratoire sont exclues.
+Déploiement d'un domaine Active Directory sous Windows Server 2025 Server Core et simulation autorisée de contrôles d'accès. Cartographie AD avec BloodHound.py CE, audit Windows/Sysmon et analyse de journaux avec Chainsaw, Sigma et Hayabusa.
 
-## Laboratoire
+## Résultats principaux
 
-| Composant | Configuration observée / retenue |
+| Axe | Résultat vérifié |
 |---|---|
-| Virtualisation | VirtualBox 7.2.22, hôte Windows |
-| VM | `P6-DC01`, Windows Server 2025 Datacenter Evaluation (Core) |
-| Domaine | `meridian.test` (NetBIOS `MERIDIAN`) |
-| Carte NAT (administration) | `10.0.2.15/24`, SSH redirigé depuis l'hôte sur `127.0.0.1:2223` |
-| Carte interne `P6-LAB` | `192.168.60.10/24`, sans passerelle |
-| Rôles | AD DS, DNS, partages SMB |
-| OU métier | Direction, Finance, IT, Utilisateurs, Serveurs, Groupes |
-| Groupes métier | GG_Direction, GG_Finance, GG_IT, GG_Employes |
+| Infrastructure | `P6-DC01`, forêt et domaine `meridian.test`, DNS AD |
+| Organisation | 6 OU métier, 5 comptes fictifs, 4 groupes métier |
+| Partages | Commun, Finance, Direction ; test d'accès Finance refusé hors groupe |
+| GPO | `GPO_Meridian_Securite` liée à OU IT, verrouillage après 600 s configuré |
+| BloodHound.py CE | 9 utilisateurs, 59 groupes, 3 GPO, 7 OU, 19 conteneurs, 1 ordinateur |
+| Cartographie | HTML interactif Python/NetworkX/PyVis produit à partir de 7 JSON |
+| Sysmon | Version 15.22, événements 1/11/22 validés, EVTX exporté |
+| Chainsaw | 94 processus ID 1 ; Security : 9 × 4728, 1 × 4729, 0 × 5145 |
+| Hayabusa | CSV Security 1 248 lignes ; 27 détections 4728, 1 détection 4729, 0 détection 5145 |
 
-## Travaux validés
+Les lignes Hayabusa ne sont pas nécessairement des événements uniques. Les actions de groupe ont été réalisées volontairement par un administrateur du lab : **aucune compromission du domaine n'est démontrée**.
 
-- Déploiement de Server Core et résolution du blocage de démarrage via mise à jour VirtualBox 7.0.0 → 7.2.22.
-- Promotion du serveur en contrôleur de domaine ; services NTDS, DNS, Netlogon actifs.
-- Résolution DNS de `meridian.test` sur `192.168.60.10` et enregistrement SRV LDAP vérifié.
-- Création de 6 OU, 5 comptes employés fictifs et 4 groupes métier.
-- Création de trois partages SMB (`Commun`, `Finance`, `Direction`) et correction de leurs ACL NTFS.
-- Tests initiaux : lecture Finance refusée avec les identifiants de `a.dia`, réussie avec `a.dupont` ; audit indépendant de l'identité SMB à compléter.
-- Inventaire AD exporté (utilisateurs, groupes et ordinateur du lab).
+## Lire / reproduire
 
-## Prochaines étapes
+- [Guide de reproduction](docs/procedure/PROCEDURE.md) - commandes, scripts, définitions, tests, dépannage, parcours d'une journée.
+- [Rapport final](docs/rapport/Rapport_final_Operation_Gryphon.docx) - analyse, résultats, limites, recommandations.
+- [Script AD](lab/scripts/01-bootstrap-ad.ps1) et [partages](lab/scripts/02-partages.ps1) - exemples de lab à relire avant usage.
+- [Configuration Sysmon](detection/config/sysmon-gryphon.xml) - journalisation ciblée.
+- [Cartographie HTML](lab/scripts/graph_meridian.py) - générateur local, sans moteur officiel CE.
+- [Règles Sigma](detection/sigma/) et [résumé Hayabusa](detection/scripts/summarize_hayabusa.py).
+- [Architecture](docs/architecture/infrastructure.md) et [cadrage](docs/cadrage/note-cadrage.md).
 
-1. Vérifier l'isolation des accès SMB sous sessions utilisateurs non privilégiées et capturer les événements associés.
-2. Cartographier AD avec BloodHound / SharpHound en gardant les exports bruts hors du dépôt.
-3. Préparer des scénarios Red Team limités au laboratoire, journaliser chaque action horodatée.
-4. Analyser les traces Windows et rédiger les règles Sigma et les recommandations.
-5. Finaliser le rapport narratif (30–50 pages) et la restitution.
+## Périmètre et limites
 
-## Organisation
+- Une seule machine Windows Server DC et une VM Ubuntu ; pas de client Windows membre distinct.
+- Pas de chemin BloodHound CE officiel validé (stockage/mémoire insuffisants pour l'interface).
+- Pas de mouvement latéral ni d'exfiltration effectivement démontrés ; ne pas confondre administration volontaire et exploitation.
+- Un ID 5145 a été observé initialement dans le journal Windows, mais n'a pas été retrouvé dans l'EVTX exporté lors de l'analyse finale.
+- Configuration GPO vérifiée au niveau AD ; application sur un poste Windows non testée.
 
-- [`docs/cadrage/note-cadrage.md`](docs/cadrage/note-cadrage.md) — périmètre, risques, planning.
-- [`docs/architecture/infrastructure.md`](docs/architecture/infrastructure.md) — architecture AD et réseau.
-- [`docs/progression.md`](docs/progression.md) — état de J1 à J5.
-- [`reconnaissance/inventaire-ad.md`](reconnaissance/inventaire-ad.md) — inventaire synthétique.
-- [`lab/configuration/verification-readonly.ps1`](lab/configuration/verification-readonly.ps1) — contrôles en lecture seule.
-- [`redteam/journal/journal-actions.md`](redteam/journal/journal-actions.md) — modèle de traçabilité.
-- [`detection/README.md`](detection/README.md) — plan de preuves et de détection.
+## Sécurité documentaire
 
-## Confidentialité et limites
-
-Le dépôt GitHub doit rester **privé**, conformément au sujet. Aucun mot de passe, secret, capture sensible, dump d'identifiants ou export brut de l'annuaire ne doit être publié. Le `.gitignore` exclut ces catégories par défaut. Cette documentation décrit un laboratoire pédagogique, pas un audit d'une vraie banque.
+Dépôt **privé**. Ne pas committer les EVTX bruts, archives BloodHound, graphe réel, certificats, mots de passe, identités réelles ni dumps. Les rapports/captures sont à expurger selon le contexte.
 
 ## Licence
 
-Voir [`LICENSE.md`](LICENSE.md). Mention restrictive provisoire à valider avec les membres de l'équipe et l'établissement ; elle ne constitue pas une licence open source.
+Voir `LICENSE.md`. Les binaires, scripts et règles tiers restent sous leurs licences respectives.

@@ -35,3 +35,25 @@ preuves/raw/
 __pycache__/
 .DS_Store
 Thumbs.db
+
+# Artefacts de collecte et journaux de sécurité
+*.evtx
+*.etl
+*.cer
+*.crt
+*.json
+*.html
+results/
+*.csv
+*.log
+
+# Artefacts de collecte et journaux de sécurité
+*.evtx
+*.etl
+*.cer
+*.crt
+*.json
+*.html
+results/
+*.csv
+*.log

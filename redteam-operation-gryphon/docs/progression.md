@@ -1,11 +1,10 @@
-# Suivi d'avancement
+# Progression - état au 12 novembre 2026
 
-| Phase | Réalisé | Reste à faire |
-|---|---|---|
-| J1 — Infrastructure | Server Core, VM, AD DS, DNS, SSH | Compléter note de cadrage et répartition |
-| J2 — AD et contrôle d'accès | OU, groupes, utilisateurs, SMB, NTFS, tests Finance, inventaire CSV | BloodHound et validation depuis compte non privilégié |
-| J3 — Red Team | — | Concevoir / réaliser les scénarios autorisés |
-| J4 — Défense | — | Journaux, forensic, Sigma, matrice ATT&CK |
-| J5 — Rapport | Dépôt documentaire initial | Rapport 30–50 pages, restitution |
-
-Ne pas confondre avancement du laboratoire et avancement global du projet. Pourcentages à actualiser selon preuves et livrables réellement achevés.
+- J1 : Windows Server 2025 / VirtualBox / AD DS / DNS installés et vérifiés.
+- J2 : OU, comptes fictifs, groupes et partages SMB fonctionnels.
+- J3/J4 : tests d'accès, ajout/retrait de membre du groupe Finance par l'administrateur, audit Security, règles Sigma.
+- GPO : configuration utilisateur de verrouillage après 600 s créée et liée à OU IT ; application client non démontrée.
+- Reconnaissance : BloodHound.py CE en Kerberos/LDAPS ; 7 JSON et ZIP ; cartographie PyVis.
+- Blue Team : Sysmon 15.22 ; Chainsaw et Hayabusa sur EVTX hors ligne.
+- Limites : pas de latéral/exfiltration réels ; interface officielle BloodHound CE non installée ; 5145 absent de la copie EVTX de fin de projet.
+- Rendu : rapport final Word, procédure .md et scripts reproductibles disponibles.
